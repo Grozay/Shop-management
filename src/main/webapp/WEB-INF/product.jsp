@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Product List</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
@@ -15,6 +14,12 @@
     <div class="container mt-4">
         <h2 class="mb-4">Product List</h2>
         <a href="products?action=add" class="btn btn-primary my-3">Add New Product</a>
+
+        <form action="products" method="get" class="d-flex my-3">
+            <input type="hidden" name="action" value="search">
+            <input type="text" name="keyword" class="form-control me-2" placeholder="Search...">
+            <button type="submit" class="btn btn-secondary">Search</button>
+        </form>
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
@@ -34,7 +39,7 @@
                         <td>${product.name}</td>
                         <td>$${product.price}</td>
                         <td>
-                            <img src="${product.imagePath}"
+                            <img src="${pageContext.request.contextPath}/${product.imagePath}"
                                  alt="${product.name}"
                                  class="img-thumbnail"
                                  style="max-width: 50px; max-height: 50px;">

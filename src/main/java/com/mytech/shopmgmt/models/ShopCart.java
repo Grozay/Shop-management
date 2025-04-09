@@ -18,6 +18,13 @@ public class ShopCart {
     @OneToMany(mappedBy = "shopCart")
     List<CartLine> cartLineList;
 
+    // Constructor mặc định (yêu cầu của JPA)
+    public ShopCart() {
+        // Không cần khởi tạo gì trong này
+        super();
+    }
+
+    // Constructor đầy đủ tham số (giữ nguyên để sử dụng trong code của bạn)
     public ShopCart(Long cartId, Customer customer, Double total, List<CartLine> cartLineList) {
         this.cartId = cartId;
         this.customer = customer;

@@ -1,11 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Login Page</title>
-<!-- Add Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -17,6 +15,12 @@
                         <h3 class="text-center">Login</h3>
                     </div>
                     <div class="card-body">
+                        <%
+                            String message = (String) request.getAttribute("message");
+                            if (message != null) {
+                        %>
+                            <p style="color: red"><%= message %></p>
+                        <% } %>
                         <form action="login" method="post">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
@@ -33,8 +37,6 @@
             </div>
         </div>
     </div>
-    
-    <!-- Add Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>

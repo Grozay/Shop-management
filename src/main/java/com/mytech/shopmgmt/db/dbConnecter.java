@@ -23,7 +23,7 @@ public class dbConnecter {
         }
     }
 
-    public static EntityManager getEntityManager(){
+    public static EntityManager getEntityManager() {
         return entityManagerFactory.createEntityManager();
     }
 

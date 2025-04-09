@@ -6,7 +6,7 @@ import jakarta.persistence.EntityManager;
 import com.mytech.shopmgmt.db.dbConnecter;
 
 public class ShopCartDao {
-    public boolean addShopCart(Customer customer, Product product, int quantity){
+    public boolean addShopCart(Customer customer, Product product, int quantity) {
         EntityManager entityManager = dbConnecter.getEntityManager();
         //1. lấy giỏ hàng từ customer
         //2. tạo cartline tu product với quantity

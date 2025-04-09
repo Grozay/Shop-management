@@ -16,14 +16,15 @@ public class ProductJDBCDao {
     private final String SELECT_PRODUCT_BY_CODE = "SELECT * FROM t3shop.product WHERE code = ?";
     private final String UPDATE_PRODUCT_BY_PRODCUT_CODE = "UPDATE t3shop.product SET name = ?, price = ?, imagePath = ? WHERE code = ?";
     private final String DELETE_PRODUCT_BY_CODE = "DELETE FROM t3shop.product WHERE code = ?";
-    private final  String INSERT_PRODUCT = "INSERT INTO t3shop.product (code, name, price, imagePath) VALUES (?, ?, ?, ?)";
+    private final String INSERT_PRODUCT = "INSERT INTO t3shop.product (code, name, price, imagePath) VALUES (?, ?, ?, ?)";
+
     public ArrayList<Product> getProducts() {
         ArrayList<Product> listProduct = new ArrayList<Product>();
         try {
             Connection connection = dbConnecter.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_PRODUCT);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 String code = resultSet.getString("code");
                 String name = resultSet.getString("name");
                 double price = resultSet.getDouble("price");
@@ -44,7 +45,7 @@ public class ProductJDBCDao {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_PRODUCT_BY_CODE);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 String name = resultSet.getString("name");
                 double price = resultSet.getDouble("price");
                 String imagePath = resultSet.getString("imagePath");

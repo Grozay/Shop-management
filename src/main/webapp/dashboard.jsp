@@ -9,6 +9,6 @@
     <h1>Dashboard</h1>
     <p>wellcome: ${username}!</p>
     <p>login date: ${loginDate}</p>
-    <p><a href="${pageContext.request.contextPath}/logout">logout</a></p>
+    <p><a href="logout">logout</a></p>
 </body>
 </html>

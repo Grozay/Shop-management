@@ -20,7 +20,7 @@
 <body>
     <div class="container">
         <h2 class="text-center mb-4">Edit Product</h2>
-        <form action="products?action=update" method="post">
+        <form action="products?action=update" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="code" class="form-label">Product Code:</label>
                 <input type="text" class="form-control" id="code" name="code" placeholder="Enter product code" value="${product.code}" readonly>
